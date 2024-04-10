@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78A507CC2BC6E46A00A2B234 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A507CB2BC6E46A00A2B234 /* Profile.swift */; };
 		78D911D22BB46DB60096E9A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D911D12BB46DB60096E9A5 /* AppDelegate.swift */; };
 		78D911D42BB46DB60096E9A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D911D32BB46DB60096E9A5 /* SceneDelegate.swift */; };
 		78D911D62BB46DB60096E9A5 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D911D52BB46DB60096E9A5 /* LoginPage.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		78A507CB2BC6E46A00A2B234 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		78D911CE2BB46DB60096E9A5 /* FinalProject_BrianCsehoski.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject_BrianCsehoski.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D911D12BB46DB60096E9A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78D911D32BB46DB60096E9A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				78DEB6142BB7134D0058F048 /* CreateAccount.swift */,
 				78DEB6162BB7139C0058F048 /* HomePage.swift */,
 				78D911D72BB46DB60096E9A5 /* Main.storyboard */,
+				78A507CB2BC6E46A00A2B234 /* Profile.swift */,
 				78D911DA2BB46DD10096E9A5 /* Assets.xcassets */,
 				78D911DC2BB46DD10096E9A5 /* LaunchScreen.storyboard */,
 				78D911DF2BB46DD10096E9A5 /* Info.plist */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78DEB6172BB7139C0058F048 /* HomePage.swift in Sources */,
+				78A507CC2BC6E46A00A2B234 /* Profile.swift in Sources */,
 				78D911D62BB46DB60096E9A5 /* LoginPage.swift in Sources */,
 				78D911D22BB46DB60096E9A5 /* AppDelegate.swift in Sources */,
 				78D911D42BB46DB60096E9A5 /* SceneDelegate.swift in Sources */,
