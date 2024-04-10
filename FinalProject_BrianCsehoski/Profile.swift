@@ -14,7 +14,7 @@ struct Profile: Codable {
     var lastName: String
     var age: Int
     var email: String
-    var firstTime: Bool = true
+    var firstTime: Bool
     
     static var archiveURL: URL {
         let documentURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -25,8 +25,8 @@ struct Profile: Codable {
     //Create default profiles for testing
     static var startingProfiles: [Profile] {
         return [
-            Profile(username: "bcsehoski", password: "bricse123!", firstName: "Brian", lastName: "Csehoski", age: 20, email: "csehoskibrian0@gmail.com"),
-            Profile(username: "dufua", password: "danufu123!", firstName: "Daniel", lastName: "Ufua", age: 20, email: "daniel.ufua@my.amptonu.edu")
+            Profile(username: "bcsehoski", password: "bricse123!", firstName: "Brian", lastName: "Csehoski", age: 20, email: "csehoskibrian0@gmail.com", firstTime: true),
+            Profile(username: "dufua", password: "danufu123!", firstName: "Daniel", lastName: "Ufua", age: 20, email: "daniel.ufua@my.amptonu.edu", firstTime: true)
         ]
     }
     
