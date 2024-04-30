@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		789FAE4A2BD2C30600E303FF /* BMICalcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789FAE492BD2C30600E303FF /* BMICalcView.swift */; };
+		789FAE4C2BD6B9EE00E303FF /* WorkoutPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789FAE4B2BD6B9EE00E303FF /* WorkoutPage.swift */; };
+		789FAE4E2BDC5C0800E303FF /* TabBarSubclass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789FAE4D2BDC5C0800E303FF /* TabBarSubclass.swift */; };
+		789FAE502BE0AB8900E303FF /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789FAE4F2BE0AB8900E303FF /* ProfilePage.swift */; };
 		78A507CC2BC6E46A00A2B234 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A507CB2BC6E46A00A2B234 /* Profile.swift */; };
 		78D911D22BB46DB60096E9A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D911D12BB46DB60096E9A5 /* AppDelegate.swift */; };
 		78D911D42BB46DB60096E9A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D911D32BB46DB60096E9A5 /* SceneDelegate.swift */; };
@@ -15,10 +19,14 @@
 		78D911DB2BB46DD10096E9A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78D911DA2BB46DD10096E9A5 /* Assets.xcassets */; };
 		78D911DE2BB46DD10096E9A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78D911DC2BB46DD10096E9A5 /* LaunchScreen.storyboard */; };
 		78DEB6152BB7134D0058F048 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DEB6142BB7134D0058F048 /* CreateAccount.swift */; };
-		78DEB6172BB7139C0058F048 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DEB6162BB7139C0058F048 /* HomePage.swift */; };
+		78DEB6172BB7139C0058F048 /* FirstTimePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DEB6162BB7139C0058F048 /* FirstTimePage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		789FAE492BD2C30600E303FF /* BMICalcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMICalcView.swift; sourceTree = "<group>"; };
+		789FAE4B2BD6B9EE00E303FF /* WorkoutPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPage.swift; sourceTree = "<group>"; };
+		789FAE4D2BDC5C0800E303FF /* TabBarSubclass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSubclass.swift; sourceTree = "<group>"; };
+		789FAE4F2BE0AB8900E303FF /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
 		78A507CB2BC6E46A00A2B234 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		78D911CE2BB46DB60096E9A5 /* FinalProject_BrianCsehoski.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject_BrianCsehoski.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D911D12BB46DB60096E9A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -29,7 +37,7 @@
 		78D911DD2BB46DD10096E9A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78D911DF2BB46DD10096E9A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78DEB6142BB7134D0058F048 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
-		78DEB6162BB7139C0058F048 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		78DEB6162BB7139C0058F048 /* FirstTimePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimePage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +74,12 @@
 				78D911D32BB46DB60096E9A5 /* SceneDelegate.swift */,
 				78D911D52BB46DB60096E9A5 /* LoginPage.swift */,
 				78DEB6142BB7134D0058F048 /* CreateAccount.swift */,
-				78DEB6162BB7139C0058F048 /* HomePage.swift */,
+				789FAE4F2BE0AB8900E303FF /* ProfilePage.swift */,
+				78DEB6162BB7139C0058F048 /* FirstTimePage.swift */,
 				78D911D72BB46DB60096E9A5 /* Main.storyboard */,
+				789FAE4D2BDC5C0800E303FF /* TabBarSubclass.swift */,
+				789FAE4B2BD6B9EE00E303FF /* WorkoutPage.swift */,
+				789FAE492BD2C30600E303FF /* BMICalcView.swift */,
 				78A507CB2BC6E46A00A2B234 /* Profile.swift */,
 				78D911DA2BB46DD10096E9A5 /* Assets.xcassets */,
 				78D911DC2BB46DD10096E9A5 /* LaunchScreen.storyboard */,
@@ -147,9 +159,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78DEB6172BB7139C0058F048 /* HomePage.swift in Sources */,
+				78DEB6172BB7139C0058F048 /* FirstTimePage.swift in Sources */,
 				78A507CC2BC6E46A00A2B234 /* Profile.swift in Sources */,
+				789FAE502BE0AB8900E303FF /* ProfilePage.swift in Sources */,
+				789FAE4A2BD2C30600E303FF /* BMICalcView.swift in Sources */,
 				78D911D62BB46DB60096E9A5 /* LoginPage.swift in Sources */,
+				789FAE4C2BD6B9EE00E303FF /* WorkoutPage.swift in Sources */,
+				789FAE4E2BDC5C0800E303FF /* TabBarSubclass.swift in Sources */,
 				78D911D22BB46DB60096E9A5 /* AppDelegate.swift in Sources */,
 				78D911D42BB46DB60096E9A5 /* SceneDelegate.swift in Sources */,
 				78DEB6152BB7134D0058F048 /* CreateAccount.swift in Sources */,
