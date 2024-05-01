@@ -10,6 +10,7 @@ import UIKit
 class LoginPage: UIViewController {
     @IBOutlet weak var mainStackView: UIStackView!
     
+    @IBOutlet weak var daGuysImage: UIImageView!
     @IBOutlet weak var passwordEntry: UITextField!
     @IBOutlet weak var usernameEntry: UITextField!
     @IBOutlet weak var loginButton: UIButton!
@@ -31,8 +32,11 @@ class LoginPage: UIViewController {
         } else {
             profiles = Profile.startingProfiles
         }
+        daGuysImage.image = UIImage(named: "DaGuys")
         
     }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let landingVC = segue.destination as? TabBarSubclass else { return }

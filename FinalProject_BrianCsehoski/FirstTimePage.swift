@@ -9,7 +9,11 @@ import UIKit
 
 class FirstTimePage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    
+    var profiles: [Profile] = [] {
+        didSet {
+            Profile.saveToFile(profiles: profiles)
+        }
+    }
     @IBOutlet weak var ageTextView: UITextField!
     @IBOutlet weak var emailTextView: UITextField!
     @IBOutlet weak var lastNameTextView: UITextField!
@@ -24,6 +28,13 @@ class FirstTimePage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         self.workoutTypeSelector.delegate = self
         self.workoutTypeSelector.dataSource = self
         pickerData = ["Strength", "Hypertrophy"]
+        
+        if let savedProfiles = Profile.loadFromFile() {
+            profiles = savedProfiles
+        } else {
+            profiles = Profile.startingProfiles
+        }
+        
         
     }
     
@@ -50,6 +61,7 @@ class FirstTimePage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     @IBAction func submitClicked(_ sender: Any) {
         if checkAge() && checkFirstName() && checkLastName() && checkEmail() {
             print("Before")
+            //Save
             performSegue(withIdentifier: "unwindFirstTime", sender: nil)
         } else {
             print("Enter all info")
@@ -65,6 +77,8 @@ class FirstTimePage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         let email = emailTextView.text ?? ""
         let age = ageTextView.text ?? ""
         
+        let currentProfileUsername = profile?.username
+        
         profile?.firstName = fName
         profile?.lastName = lName
         profile?.age = age
@@ -76,7 +90,16 @@ class FirstTimePage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             profile?.strengthWorkout = true
             profile?.hypertrophyWorkout = false
         }
-        print(profile)
+        
+        
+        var currentProfileIndex = 0
+        for i in 0...profiles.count - 1 {
+            if profiles[i].username == currentProfileUsername {
+                currentProfileIndex = i
+            }
+        }
+        profiles[currentProfileIndex] = profile!
+        
         
     }
     
