@@ -45,40 +45,90 @@ class ProfilePage: UIViewController {
         if let tbc = tabBarController as? TabBarSubclass {
             profile = tbc.profile
             guard let profile = tbc.profile else { return }
-            fNameLabel.text = profile.firstName
-            lNameLabel.text = profile.lastName
-            ageLabel.text = profile.age
-            emailLabel.text = profile.email
-            if profile.hypertrophyWorkout == true {
+            if let savedProfiles = Profile.loadFromFile() {
+                profiles = savedProfiles
+            } else {
+                profiles = Profile.startingProfiles
+            }
+            let currentProfileUsername = profile.username
+            var currentProfileIndex = 0
+            for i in 0...profiles.count - 1 {
+                if profiles[i].username == currentProfileUsername {
+                    currentProfileIndex = i
+                }
+            }
+            let currentProfile = profiles[currentProfileIndex]
+            fNameLabel.text = currentProfile.firstName
+            lNameLabel.text = currentProfile.lastName
+            ageLabel.text = currentProfile.age
+            emailLabel.text = currentProfile.email
+            if currentProfile.hypertrophyWorkout == true {
                 hypertrophyLabel.text = "Yes"
                 strengthLabel.text = "No"
-            } else if profile.strengthWorkout == true {
+            } else if currentProfile.strengthWorkout == true {
                 hypertrophyLabel.text = "No"
                 strengthLabel.text = "Yes"
             }
-            benchLabel.text = String(profile.bbBenchWeight)
-            sPressLabel.text = String(profile.shoulderPressWeight)
-            rowLabel.text = String(profile.rowWeight)
-            dbInclineLabel.text = String(profile.dbInclineWeight)
-            dbCurlLabel.text = String(profile.dbCurlWeight)
-            hCurlLabel.text = String(profile.hCurlWeight)
-            sCrusherLabel.text = String(profile.skullCrusherWeight)
-            tPushDownLabel.text = String(profile.tricepPDownWeight)
-            squatLabel.text = String(profile.squatWeight)
-            rdlLabel.text = String(profile.rdlWeight)
-            fSquatLabel.text = String(profile.fSquatWeight)
-            deadliftLabel.text = String(profile.deadLiftWeight)
-            hexDeadliftLabel.text = String(profile.hexBarWeight)
-            dbLungeLabel.text = String(profile.dbLungeWeight)
+            benchLabel.text = String(currentProfile.bbBenchWeight)
+            sPressLabel.text = String(currentProfile.shoulderPressWeight)
+            rowLabel.text = String(currentProfile.rowWeight)
+            dbInclineLabel.text = String(currentProfile.dbInclineWeight)
+            dbCurlLabel.text = String(currentProfile.dbCurlWeight)
+            hCurlLabel.text = String(currentProfile.hCurlWeight)
+            sCrusherLabel.text = String(currentProfile.skullCrusherWeight)
+            tPushDownLabel.text = String(currentProfile.tricepPDownWeight)
+            squatLabel.text = String(currentProfile.squatWeight)
+            rdlLabel.text = String(currentProfile.rdlWeight)
+            fSquatLabel.text = String(currentProfile.fSquatWeight)
+            deadliftLabel.text = String(currentProfile.deadLiftWeight)
+            hexDeadliftLabel.text = String(currentProfile.hexBarWeight)
+            dbLungeLabel.text = String(currentProfile.dbLungeWeight)
         }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let savedProfiles = Profile.loadFromFile() {
-            profiles = savedProfiles
-        } else {
-            profiles = Profile.startingProfiles
+        if let tbc = tabBarController as? TabBarSubclass {
+            profile = tbc.profile
+            guard let profile = tbc.profile else { return }
+            if let savedProfiles = Profile.loadFromFile() {
+                profiles = savedProfiles
+            } else {
+                profiles = Profile.startingProfiles
+            }
+            let currentProfileUsername = profile.username
+            var currentProfileIndex = 0
+            for i in 0...profiles.count - 1 {
+                if profiles[i].username == currentProfileUsername {
+                    currentProfileIndex = i
+                }
+            }
+            let currentProfile = profiles[currentProfileIndex]
+            fNameLabel.text = currentProfile.firstName
+            lNameLabel.text = currentProfile.lastName
+            ageLabel.text = currentProfile.age
+            emailLabel.text = currentProfile.email
+            if currentProfile.hypertrophyWorkout == true {
+                hypertrophyLabel.text = "Yes"
+                strengthLabel.text = "No"
+            } else if currentProfile.strengthWorkout == true {
+                hypertrophyLabel.text = "No"
+                strengthLabel.text = "Yes"
+            }
+            benchLabel.text = String(currentProfile.bbBenchWeight)
+            sPressLabel.text = String(currentProfile.shoulderPressWeight)
+            rowLabel.text = String(currentProfile.rowWeight)
+            dbInclineLabel.text = String(currentProfile.dbInclineWeight)
+            dbCurlLabel.text = String(currentProfile.dbCurlWeight)
+            hCurlLabel.text = String(currentProfile.hCurlWeight)
+            sCrusherLabel.text = String(currentProfile.skullCrusherWeight)
+            tPushDownLabel.text = String(currentProfile.tricepPDownWeight)
+            squatLabel.text = String(currentProfile.squatWeight)
+            rdlLabel.text = String(currentProfile.rdlWeight)
+            fSquatLabel.text = String(currentProfile.fSquatWeight)
+            deadliftLabel.text = String(currentProfile.deadLiftWeight)
+            hexDeadliftLabel.text = String(currentProfile.hexBarWeight)
+            dbLungeLabel.text = String(currentProfile.dbLungeWeight)
         }
     }
     @IBAction func submitWeightChanges(_ sender: Any) {

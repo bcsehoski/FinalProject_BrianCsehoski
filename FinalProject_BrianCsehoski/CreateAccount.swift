@@ -39,11 +39,19 @@ class CreateAccount: UIViewController {
     }
 
     @IBAction func createAccountPressed(_ sender: Any) {
-        if checkLowercase() && checkUppercase() && checkPasswordLength() && checkSpecialCharacter() {
+        if checkLowercase() && checkUppercase() && checkPasswordLength() && checkSpecialCharacter() && checkMatchingPasswords() {
             print("Before")
             performSegue(withIdentifier: "createAccountUnwind", sender: nil)
-        } else {
-            print("Incorrect info")
+        } else if !checkLowercase() {
+            print("Missing lowercase")
+        } else if !checkUppercase() {
+            print("Missing upercase")
+        } else if !checkPasswordLength() {
+            print("Not long enough")
+        } else if !checkSpecialCharacter() {
+            print("No special characters")
+        } else if !checkMatchingPasswords() {
+            print("Passwords don't match")
         }
     }
     
@@ -52,7 +60,7 @@ class CreateAccount: UIViewController {
         
         let username = usernameTextField.text ?? ""
         let password = firstPwordTextField.text ?? ""
-        profile = Profile(username: username, password: password, firstName: "", lastName: "", age: "", email: "", strengthWorkout: false, hypertrophyWorkout: false, bbBenchWeight: 125, shoulderPressWeight: 95, rowWeight: 135, dbInclineWeight: 50, dbCurlWeight: 40, hCurlWeight: 50, skullCrusherWeight: 95, tricepPDownWeight: 40, squatWeight: 225, rdlWeight: 185, fSquatWeight: 205, deadLiftWeight: 275, hexBarWeight: 275, dbLungeWeight: 50)
+        profile = Profile(username: username, password: password, firstName: "", lastName: "", age: "", email: "", strengthWorkout: true, hypertrophyWorkout: false, bbBenchWeight: 125, shoulderPressWeight: 95, rowWeight: 135, dbInclineWeight: 50, dbCurlWeight: 40, hCurlWeight: 50, skullCrusherWeight: 95, tricepPDownWeight: 40, squatWeight: 225, rdlWeight: 185, fSquatWeight: 205, deadLiftWeight: 275, hexBarWeight: 275, dbLungeWeight: 50)
     }
     
     func checkPasswordLength() -> Bool {
@@ -87,12 +95,21 @@ class CreateAccount: UIViewController {
     }
     
     func checkSpecialCharacter() -> Bool {
-        var regularCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+        let regularCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
         if let password = firstPwordTextField.text {
             for char in password {
                 if !regularCharacters.contains(String(char)) {
                     return true
                 }
+            }
+        }
+        return false
+    }
+    
+    func checkMatchingPasswords() -> Bool {
+        if let password = firstPwordTextField.text {
+            if password == secondPwordTextField.text {
+                return true
             }
         }
         return false

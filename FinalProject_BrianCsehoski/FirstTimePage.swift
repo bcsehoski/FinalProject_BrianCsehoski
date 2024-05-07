@@ -99,6 +99,7 @@ class FirstTimePage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             }
         }
         profiles[currentProfileIndex] = profile!
+        print(profile)
         
         
     }
